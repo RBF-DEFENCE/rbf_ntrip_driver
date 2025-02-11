@@ -32,7 +32,7 @@ namespace libntrip {
 
     int BccCheckSumCompareForGGA(const char *src) {
         int sum = 0;
-        int num = 0;
+        unsigned int num = 0;
         sscanf(src, "%*[^*]*%x", &num);
         for (int i = 1; src[i] != '*'; ++i) {
             sum ^= src[i];

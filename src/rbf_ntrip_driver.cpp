@@ -44,23 +44,23 @@ namespace rbf_ntrip_driver {
 
     void NtripDriver::load_parameters()
     {
-        config_.ntrip.host = declare_parameter("ntrip.host", "ntrip.example.com");
-        config_.ntrip.port = declare_parameter("ntrip.port", 2101);
-        config_.ntrip.mountpoint = declare_parameter("ntrip.mount_point", "VRSRTCM31");
-        config_.ntrip.username = declare_parameter("ntrip.user_name", "username");
-        config_.ntrip.password = declare_parameter("ntrip.password", "password");
-        config_.ntrip.use_nav_sat_fix_init = declare_parameter("ntrip.use_nav_sat_fix_init", false);
-        config_.ntrip.nav_sat_fix_topic_name = declare_parameter("ntrip.nav_sat_fix_topic_name", "/fix");
-        config_.ntrip.init_lat_position = declare_parameter("ntrip.init_ntrip_location_lat", 0.0);
-        config_.ntrip.init_lon_position = declare_parameter("ntrip.init_ntrip_location_lon", 0.0);
+        config_.ntrip.host = declare_parameter("rbf_ntrip_driver.ntrip.host", "ntrip.example.com");
+        config_.ntrip.port = declare_parameter("rbf_ntrip_driver.ntrip.port", 2101);
+        config_.ntrip.mountpoint = declare_parameter("rbf_ntrip_driver.ntrip.mount_point", "VRSRTCM31");
+        config_.ntrip.username = declare_parameter("rbf_ntrip_driver.ntrip.user_name", "username");
+        config_.ntrip.password = declare_parameter("rbf_ntrip_driver.ntrip.password", "password");
+        config_.ntrip.use_nav_sat_fix_init = declare_parameter("rbf_ntrip_driver.ntrip.use_nav_sat_fix_init", false);
+        config_.ntrip.nav_sat_fix_topic_name = declare_parameter("rbf_ntrip_driver.ntrip.nav_sat_fix_topic_name", "/fix");
+        config_.ntrip.init_lat_position = declare_parameter("rbf_ntrip_driver.ntrip.init_ntrip_location_lat", 0.0);
+        config_.ntrip.init_lon_position = declare_parameter("rbf_ntrip_driver.ntrip.init_ntrip_location_lon", 0.0);
 
-        config_.serial_port.port = declare_parameter("serial_port.name", "/dev/ttyUSB0");
-        config_.serial_port.baudrate = declare_parameter("serial_port.baud_rate", 9600);
-        config_.serial_port.publish_port_rtcm = declare_parameter("serial_port.publish_port_rtcm", false);
+        config_.serial_port.port = declare_parameter("rbf_ntrip_driver.serial_port.name", "/dev/ttyUSB0");
+        config_.serial_port.baudrate = declare_parameter("rbf_ntrip_driver.serial_port.baud_rate", 9600);
+        config_.serial_port.publish_port_rtcm = declare_parameter("rbf_ntrip_driver.serial_port.publish_port_rtcm", false);
 
-        config_.rtcm_publisher.topic_name = declare_parameter("rtcm_publisher.rtcm_topic", "rtcm");
-        config_.rtcm_publisher.publish_rtcm = declare_parameter("rtcm_publisher.publish_rtcm", true);
-        config_.rtcm_publisher.frame_id = declare_parameter("rtcm_publisher.frame_id", "rtcm");
+        config_.rtcm_publisher.topic_name = declare_parameter("rbf_ntrip_driver.rtcm_publisher.rtcm_topic", "rtcm");
+        config_.rtcm_publisher.publish_rtcm = declare_parameter("rbf_ntrip_driver.rtcm_publisher.publish_rtcm", true);
+        config_.rtcm_publisher.frame_id = declare_parameter("rbf_ntrip_driver.rtcm_publisher.frame_id", "rtcm");
 
         RCLCPP_INFO(this->get_logger(),"---------NTRIP CONFIGURATION--------");
         RCLCPP_INFO(this->get_logger(),"host: %s", config_.ntrip.host.c_str());
